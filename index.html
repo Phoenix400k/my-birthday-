@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khalid's Birthday | 7 Feb</title>
+
+    <meta property="og:image" content="https://i.ibb.co/fVKr0pbN/image.jpg">
+    <meta property="og:title" content="Next Khalid's Birthday">
+    <meta property="og:description" content="شوف كم باقي على يوم ميلادي!">
+    <meta property="og:type" content="website">
+
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         body {
             margin: 0;
@@ -74,15 +81,15 @@
         </div>
 
         <div class="social-links">
-            <a href="https://www.snapchat.com/add/kj5_e" target="_blank" title="Snapchat"><i class="fab fa-snapchat"></i></a>
-            <a href="https://www.instagram.com/k46.f" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@kh5.s" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.snapchat.com/add/kj5_e" target="_blank"><i class="fab fa-snapchat"></i></a>
+            <a href="https://www.instagram.com/k46.f" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@kh5.s" target="_blank"><i class="fab fa-tiktok"></i></a>
         </div>
     </div>
 
     <script>
         const B_DAY = 7;
-        const B_MONTH = 1; // شهر فبراير
+        const B_MONTH = 1; // فبراير
 
         function getKSATime() {
             const now = new Date();
@@ -112,15 +119,15 @@
             document.getElementById('hbd-msg').style.display = 'none';
         }
 
-        let isCelebrationStarted = false;
+        let isDone = false;
         function showBday() {
             document.getElementById('countdown-ui').style.display = 'none';
             document.getElementById('hbd-msg').style.display = 'block';
-            if (!isCelebrationStarted) {
+            if (!isDone) {
                 const music = document.getElementById('bday-music');
                 music.play().catch(() => {});
                 fire();
-                isCelebrationStarted = true;
+                isDone = true;
             }
         }
 
@@ -135,7 +142,7 @@
 
         setInterval(update, 1000);
         update();
-        document.addEventListener('click', () => { if(isCelebrationStarted) document.getElementById('bday-music').play(); }, {once: true});
+        document.addEventListener('click', () => { if(isDone) document.getElementById('bday-music').play(); }, {once: true});
     </script>
 </body>
 </html>
